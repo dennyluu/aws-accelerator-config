@@ -1,0 +1,43 @@
+mandatoryAccounts:
+  - name: Management
+    description: >-
+      The management (primary) account. Do not change the name field for this
+      mandatory account. Note, the account name key does not need to match the
+      AWS account name.
+    email: mqduong+1@amazon.com
+    organizationalUnit: Root
+    warm: false
+  - name: LogArchive
+    description: >-
+      The log archive account. Do not change the name field for this mandatory
+      account. Note, the account name key does not need to match the AWS account
+      name.
+    email: mqduong+3@amazon.com
+    organizationalUnit: Security
+    warm: false
+  - name: Audit
+    description: >-
+      The security audit account (also referred to as the audit account). Do not
+      change the name field for this mandatory account. Note, the account name
+      key does not need to match the AWS account name.
+    email: mqduong+2@amazon.com
+    organizationalUnit: Security
+    warm: false
+
+workloadAccounts:
+  - name: Network
+    email: mqduong+5@amazon.com
+    organizationalUnit: Infrastructure
+    warm: false
+  - name: mqduongTestOUAccount
+    email: mqduong+testOUAccount@amazon.com
+    organizationalUnit: Test
+    warm: false
+  - name: Backup
+    email: mqduong+6@amazon.com
+    organizationalUnit: Security
+    warm: false
+  - name: BackupAdministrator
+    email: mqduong+7@amazon.com
+    organizationalUnit: Security
+    warm: false
