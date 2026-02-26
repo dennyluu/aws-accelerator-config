@@ -1,0 +1,11 @@
+enable: true
+organizationalUnits:
+  - name: Security
+  - name: Infrastructure
+  - name: Test
+  - name: Suspended
+    ignore: true
+serviceControlPolicies: []
+taggingPolicies: []
+chatbotPolicies: []
+backupPolicies: []
