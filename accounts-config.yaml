@@ -25,21 +25,13 @@ mandatoryAccounts:
     warm: false
 
 workloadAccounts:
-  - name: Network
+  - name: DennyLuuSuccesss
     email: dennyluu+SCSuccess@amazon.com
     organizationalUnit: Infrastructure
     warm: false
-  - name: Sandbox
+  - name: dennyluu-sand
     email: dennyluu+Sand@amazon.com
     organizationalUnit: Sandbox
     warm: false
-  - name: CentralBackup
-    email: dennyluu+backup@amazon.com
-    organizationalUnit: Security
-    warm: false
-  - name: BackupAdministrator
-    email: dennyluu+backupadmin@amazon.com
-    organizationalUnit: Security
-    warm: false
-
+ 
 
