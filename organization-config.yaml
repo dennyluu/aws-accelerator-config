@@ -3,7 +3,6 @@ organizationalUnits:
   - name: Security
   - name: Infrastructure
   - name: Sandbox
-  - name: Test
   - name: Suspended
     ignore: true
 serviceControlPolicies: []
