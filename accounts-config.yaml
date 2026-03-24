@@ -24,14 +24,6 @@ mandatoryAccounts:
     organizationalUnit: Security
     warm: false
 
-workloadAccounts:
-  - name: DennyLuuSuccesss
-    email: dennyluu+SCSuccess@amazon.com
-    organizationalUnit: Infrastructure
-    warm: false
-  - name: dennyluu-sand
-    email: dennyluu+Sand@amazon.com
-    organizationalUnit: Sandbox
-    warm: false
+workloadAccounts: []
  
 
