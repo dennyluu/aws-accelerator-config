@@ -2,10 +2,12 @@ defaultVpc:
   delete: false
   excludeAccounts: []
 transitGateways: []
-endpointPolicies: []
+endpointPolicies:
+  - name: Default
+    document: policies/Default.json
 vpcs:
   - name: Test-VPC
-    account: "830088749475"
+    account: Management
     region: us-east-1
     cidrs:
       - 10.0.0.0/16
