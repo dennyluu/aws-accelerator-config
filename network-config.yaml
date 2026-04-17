@@ -19,6 +19,7 @@ vpcs:
         routes: []
     interfaceEndpoints:
       central: false
+      defaultPolicy: Default
       subnets:
         - Test-Subnet-A
       endpoints:
