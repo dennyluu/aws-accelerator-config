@@ -2,5 +2,49 @@ defaultVpc:
   delete: false
   excludeAccounts: []
 transitGateways: []
-endpointPolicies: []
-vpcs: []
+endpointPolicies:
+  - name: Default
+    document: policies/endpoint-policy.json
+vpcs:
+  - name: Test-VPC
+    account: Management
+    region: us-east-1
+    cidrs:
+      - 10.0.0.0/16
+    subnets:
+      - name: Test-Subnet-A
+        availabilityZone: a
+        routeTable: Test-RouteTable
+        ipv4CidrBlock: 10.0.0.0/24
+      - name: Test-Subnet-B
+        availabilityZone: b
+        routeTable: Test-RouteTable
+        ipv4CidrBlock: 10.0.1.0/24
+    routeTables:
+      - name: Test-RouteTable
+        routes: []
+    securityGroups:
+      - name: Test-Endpoint-SG
+        description: Security group for Route53 VPC endpoint
+        inboundRules:
+          - description: Allow HTTPS from VPC
+            types:
+              - HTTPS
+            sources:
+              - 10.0.0.0/16
+        outboundRules:
+          - description: Allow all outbound
+            types:
+              - ALL
+            sources:
+              - 0.0.0.0/0
+    interfaceEndpoints:
+      central: false
+      defaultPolicy: Default
+      subnets:
+        - Test-Subnet-A
+        - Test-Subnet-B
+      securityGroups:
+        - Test-Endpoint-SG
+      endpoints:
+        - service: route53
