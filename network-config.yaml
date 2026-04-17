@@ -9,6 +9,10 @@ vpcs:
     region: us-east-1
     cidrs:
       - 10.0.0.0/16
+    enableDnsHostnames: true
+    enableDnsSupport: true
+    internetGateway: false
+    natGateways: 0
     subnets:
       - name: Test-Subnet-A
         availabilityZone: a
@@ -23,4 +27,3 @@ vpcs:
         - Test-Subnet-A
       endpoints:
         - service: route53
-
