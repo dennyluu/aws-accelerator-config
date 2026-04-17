@@ -3,4 +3,24 @@ defaultVpc:
   excludeAccounts: []
 transitGateways: []
 endpointPolicies: []
-vpcs: []
+vpcs:
+  - name: Test-VPC
+    account: 830088749475
+    region: us-east-1
+    cidrs:
+      - 10.0.0.0/16
+    subnets:
+      - name: Test-Subnet-A
+        availabilityZone: a
+        routeTable: Test-RouteTable
+        ipv4CidrBlock: 10.0.0.0/24
+    routeTables:
+      - name: Test-RouteTable
+        routes: []
+    interfaceEndpoints:
+      central: false
+      subnets:
+        - Test-Subnet-A
+      endpoints:
+        - service: route53
+
