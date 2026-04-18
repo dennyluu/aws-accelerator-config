@@ -48,3 +48,4 @@ vpcs:
         - Test-Endpoint-SG
       endpoints:
         - service: route53
+        - serviceName: com.amazonaws.route53
