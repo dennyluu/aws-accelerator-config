@@ -4,6 +4,7 @@ customizations:
       template: cloudformation/wafv2-alb.yaml
       regions:
         - us-east-1
+      runOrder: 1
       terminationProtection: false
       deploymentTargets:
         accounts:
