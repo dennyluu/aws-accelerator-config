@@ -1,0 +1,9 @@
+customizations:
+  cloudFormationStacks:
+    - name: wafv2-alb
+      template: cloudformation/wafv2-alb.yaml
+      regions:
+        - us-east-1
+      deploymentTargets:
+        accounts:
+          - Management
