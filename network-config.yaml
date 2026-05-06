@@ -1,22 +1,22 @@
 defaultVpc:
   delete: false
   excludeAccounts: []
-transitGateways: []
-  # - name: Main-TGW
-  #   account: Management
-  #   region: us-east-1
-  #   shareTargets:
-  #     accounts: []
-  #   asn: 65521
-  #   dnsSupport: enable
-  #   vpnEcmpSupport: enable
-  #   defaultRouteTableAssociation: disable
-  #   defaultRouteTablePropagation: disable
-  #   autoAcceptSharingAttachments: enable
-  #   multicastSupport: enable
-  #   routeTables:
-  #     - name: Main-TGW-Core-RT
-  #       routes: []
+transitGateways: 
+  - name: Main-TGW
+    account: Management
+    region: us-east-1
+    shareTargets:
+      accounts: []
+    asn: 65521
+    dnsSupport: enable
+    vpnEcmpSupport: enable
+    defaultRouteTableAssociation: disable
+    defaultRouteTablePropagation: disable
+    autoAcceptSharingAttachments: enable
+    multicastSupport: enable
+    routeTables:
+      - name: Main-TGW-Core-RT
+        routes: []
 endpointPolicies:
   - name: Default
     document: policies/endpoint-policy.json
