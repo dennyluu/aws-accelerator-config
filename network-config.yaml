@@ -13,7 +13,7 @@ transitGateways:
     defaultRouteTableAssociation: disable
     defaultRouteTablePropagation: disable
     autoAcceptSharingAttachments: enable
-    multicastSupport: enable
+    multicastSupport: disable
     routeTables:
       - name: Main-TGW-Core-RT
         routes: []
