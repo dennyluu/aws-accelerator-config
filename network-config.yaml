@@ -1,8 +1,8 @@
 defaultVpc:
   delete: false
   excludeAccounts: []
-transitGateways: 
- - name: Main-TGW
+transitGateways:
+  - name: Main-TGW
     account: Management
     region: us-east-1
     shareTargets:
@@ -19,5 +19,4 @@ transitGateways:
 endpointPolicies:
   - name: Default
     document: policies/endpoint-policy.json
-vpcs: [] 
- 
+vpcs: []
