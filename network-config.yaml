@@ -2,7 +2,7 @@ defaultVpc:
   delete: false
   excludeAccounts: []
 transitGateways: 
-  - name: Main-TGWv2
+  - name: Main-TGW
     account: Management
     region: us-east-1
     shareTargets:
