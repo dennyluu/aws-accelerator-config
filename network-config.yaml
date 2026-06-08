@@ -27,8 +27,6 @@ vpcTemplates:
     deploymentTargets:
       accounts:
         - Management
-      excludedAccounts:
-        - Management
     cidrs:
       - 10.1.0.0/16
     subnets:
