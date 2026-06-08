@@ -41,7 +41,8 @@ vpcTemplates:
       - name: Workload-RT
         routes: []
     transitGatewayAttachments:
-      - transitGateway:
+      - name: Workload-VPC-TGW-Attach
+        transitGateway:
           name: Main-TGW
           account: Management
         routeTableAssociations:
