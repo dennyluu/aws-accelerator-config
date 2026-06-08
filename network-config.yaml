@@ -25,7 +25,7 @@ vpcTemplates:
     region: us-east-1
     deploymentTargets:
       accounts:
-        - Network
+        - Audit
     cidrs:
       - 10.1.0.0/16
     subnets:
