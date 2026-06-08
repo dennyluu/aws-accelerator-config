@@ -1,4 +1,3 @@
-
 defaultVpc:
   delete: true
   excludeAccounts: []
@@ -56,59 +55,3 @@ vpcTemplates:
 
 vpcs: []
 
-defaultVpc:
-  delete: true
-  excludeAccounts: []
-
-transitGateways:
-  - name: Main-TGW
-    account: Management
-    region: us-east-1
-    asn: 65521
-    dnsSupport: enable
-    vpnEcmpSupport: enable
-    defaultRouteTableAssociation: disable
-    defaultRouteTablePropagation: disable
-    autoAcceptSharingAttachments: enable
-    routeTables:
-      - name: Main-TGW-Core-RT
-        routes: []
-
-endpointPolicies:
-  - name: Default
-    document: policies/endpoint-policy.json
-
-vpcTemplates:
-  - name: Workload-VPC
-    region: us-east-1
-    deploymentTargets:
-      accounts:
-        - Audit
-    cidrs:
-      - 10.1.0.0/16
-    subnets:
-      - name: App-Subnet-A
-        availabilityZone: a
-        ipv4CidrBlock: 10.1.1.0/24
-        routeTable: Workload-RT
-      - name: App-Subnet-B
-        availabilityZone: b
-        ipv4CidrBlock: 10.1.2.0/24
-        routeTable: Workload-RT
-    routeTables:
-      - name: Workload-RT
-        routes: []
-    transitGatewayAttachments:
-      - name: Workload-VPC-TGW-Attach
-        transitGateway:
-          name: Main-TGW
-          account: Management
-        routeTableAssociations:
-          - Main-TGW-Core-RT
-        routeTablePropagations:
-          - Main-TGW-Core-RT
-        subnets:
-          - App-Subnet-A
-          - App-Subnet-B
-
-vpcs: []
