@@ -27,6 +27,8 @@ vpcTemplates:
     deploymentTargets:
       accounts:
         - Management
+      excludedAccounts:
+        - Management
     cidrs:
       - 10.1.0.0/16
     subnets:
@@ -54,22 +56,4 @@ vpcTemplates:
           - App-Subnet-A
           - App-Subnet-B
 
-vpcs:
-  - name: Bad-VPC
-    account: Management
-    region: us-east-1
-    cidrs:
-      - 10.2.0.0/28
-    subnets:
-      - name: Subnet-A
-        availabilityZone: a
-        ipv4CidrBlock: 10.2.0.0/24
-        routeTable: Bad-RT
-      - name: Subnet-B
-        availabilityZone: b
-        ipv4CidrBlock: 10.2.1.0/24
-        routeTable: Bad-RT
-    routeTables:
-      - name: Bad-RT
-        routes: []
-
+vpcs: []
