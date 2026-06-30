@@ -24,6 +24,24 @@ mandatoryAccounts:
     organizationalUnit: Security
     warm: false
 
-workloadAccounts: []
- 
-
+workloadAccounts:
+  - name: dennyluu-sand
+    description: >-
+      Workload account for sandbox workloads
+    email: dennyluu+Sand@amazon.com
+    organizationalUnit: Infrastructure
+  - name: DennyLuuSuccesss
+    description: >-
+      Workload account
+    email: dennyluu+SCSuccess@amazon.com
+    organizationalUnit: Infrastructure
+  - name: Backup administrator
+    description: >-
+      Backup administrator account
+    email: dennyluu+backupadmin@amazon.com
+    organizationalUnit: Suspended
+  - name: Central backup
+    description: >-
+      Central backup account
+    email: dennyluu+backup@amazon.com
+    organizationalUnit: Suspended
