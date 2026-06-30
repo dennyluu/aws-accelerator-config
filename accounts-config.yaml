@@ -24,14 +24,19 @@ mandatoryAccounts:
     organizationalUnit: Security
     warm: false
 
+
 workloadAccounts:
   - name: dennyluu-sand
     description: >-
       Workload account for sandbox workloads
     email: dennyluu+Sand@amazon.com
     organizationalUnit: Infrastructure
+    accountId: '366137854840'
+    create: false
   - name: DennyLuuSuccesss
     description: >-
       Workload account
     email: dennyluu+SCSuccess@amazon.com
     organizationalUnit: Infrastructure
+    accountId: '231907690311'
+    create: false
