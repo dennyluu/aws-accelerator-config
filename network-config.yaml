@@ -2,11 +2,84 @@ defaultVpc:
   delete: false
   excludeAccounts: []
 
-transitGateways: []
+transitGateways:
+  - name: test-tgw-01
+    account: Network
+    region: *HOME_REGION
+    shareTargets:
+      organizationalUnits:
+        - Infrastructure
+    routeTables:
+      - name: spoke-vpcs-routetable
+        routes: []
+      - name: inspection-vpc-routetable
+        routes: []
 
 endpointPolicies: []
 
 vpcTemplates: []
 
-vpcs: []
+vpcs:
+  - name: test-vpc01
+    account: Network
+    region: *HOME_REGION
+    cidrs:
+      - 10.1.0.0/16
+    routeTables:
+      - name: test-vpc01-rt-a
+        routes: []
+      - name: test-vpc01-rt-b
+        routes: []
+    subnets:
+      - name: test-vpc01-private-az-a
+        availabilityZone: a
+        routeTable: test-vpc01-rt-a
+        ipv4CidrBlock: 10.1.1.0/24
+      - name: test-vpc01-private-az-b
+        availabilityZone: b
+        routeTable: test-vpc01-rt-b
+        ipv4CidrBlock: 10.1.2.0/24
+    transitGatewayAttachments:
+      - name: test-vpc01-tgw-attach
+        transitGateway:
+          name: test-tgw-01
+          account: Network
+        routeTableAssociations:
+          - spoke-vpcs-routetable
+        routeTablePropagations:
+          - inspection-vpc-routetable
+        subnets:
+          - test-vpc01-private-az-a
+          - test-vpc01-private-az-b
 
+  - name: test-vpc02
+    account: Network
+    region: *HOME_REGION
+    cidrs:
+      - 10.2.0.0/16
+    routeTables:
+      - name: test-vpc02-rt-a
+        routes: []
+      - name: test-vpc02-rt-b
+        routes: []
+    subnets:
+      - name: test-vpc02-private-az-a
+        availabilityZone: a
+        routeTable: test-vpc02-rt-a
+        ipv4CidrBlock: 10.2.1.0/24
+      - name: test-vpc02-private-az-b
+        availabilityZone: b
+        routeTable: test-vpc02-rt-b
+        ipv4CidrBlock: 10.2.2.0/24
+    transitGatewayAttachments:
+      - name: test-vpc02-tgw-attach
+        transitGateway:
+          name: test-tgw-01
+          account: Network
+        routeTableAssociations:
+          - spoke-vpcs-routetable
+        routeTablePropagations:
+          - inspection-vpc-routetable
+        subnets:
+          - test-vpc02-private-az-a
+          - test-vpc02-private-az-b
